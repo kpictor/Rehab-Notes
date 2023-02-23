@@ -2,7 +2,7 @@ import datetime
 import os
 
 # define a function that generates a physical therapy record for a patient
-def generate_pt_record():
+def generate_pt_notes():
     # prompt the user to input patient information
     name = input("Enter patient's name: ")
     age = input("Enter patient's age: ")
@@ -112,7 +112,7 @@ A follow-up appointment is scheduled for {follow_up}.
 
     # save the markdown text to a file on the desktop
     date_str = datetime.datetime.now().strftime("%Y%m%d")
-    file_name = "{date}-Hu.-{name}PTRecord".format(date=date_str, name=name)
+    file_name = "{date}-Hu.-{name}PTNotes".format(date=date_str, name=name)
     desktop_path = os.path.join(os.path.join(os.path.expanduser('~')), 'Desktop')
     file_path = os.path.join(desktop_path, file_name + ".md")
   
@@ -123,4 +123,4 @@ A follow-up appointment is scheduled for {follow_up}.
     print("Markdown document generated as", file_name + ".md on Desktop")  
 
 # Example usage:
-generate_pt_record()
+generate_pt_notes()
